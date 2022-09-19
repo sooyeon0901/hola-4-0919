@@ -21,7 +21,7 @@ export const MailboxProvider = (props: MailboxProviderProps): JSX.Element => {
     if (!wallet.publicKey) {
       return;
     }
-    const mb = new Mailbox(connection, wallet, { cluster, sendObfuscated: true });
+    const mb = undefined; //new Mailbox(connection, wallet, { cluster, sendObfuscated: true });
     setMailbox(mb);
   }, [connection, wallet.publicKey, cluster]);
 

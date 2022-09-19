@@ -11,6 +11,7 @@ import { AppHeader } from '@/components/AppHeader';
 import { Close } from '@/assets/icons/Close';
 import { AnalyticsProvider } from 'src/views/_global/AnalyticsProvider';
 import {
+  CherryWalletAdapter,
   LedgerWalletAdapter,
   PhantomWalletAdapter,
   SlopeWalletAdapter,
@@ -65,6 +66,7 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
 
   const wallets = useMemo(
     () => [
+      new CherryWalletAdapter(),
       new PhantomWalletAdapter(),
       new SolflareWalletAdapter(),
       new SlopeWalletAdapter(),
