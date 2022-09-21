@@ -138,6 +138,7 @@ async function consume() {
         const tx = new Transaction();
 
         signMetadata(metadata, keypair.publicKey, tx, metaProgramId);
+        console.log('sign-metadata==', metadata); //listing할 때 안 찍힘
 
         tx.feePayer = keypair.publicKey;
         tx.recentBlockhash = (await connection.getRecentBlockhash()).blockhash;

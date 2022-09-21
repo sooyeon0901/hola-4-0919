@@ -28,7 +28,7 @@ const CookieSettings = (props: {
     cookies.holaplex_preference_cookies_acceptance === 'true' || false
   );
 
-  console.log(preferenceCookies, analyticsCookies);
+  //console.log(preferenceCookies, analyticsCookies); //ksy 주석처리 0920
 
   useEffect(() => {
     setAnalyticsCookies(cookies.holaplex_analytics_cookies_acceptance === 'true');
