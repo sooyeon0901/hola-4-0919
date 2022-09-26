@@ -1,8 +1,8 @@
-import React, { FC, useState } from 'react';
+import React, { FC, ReactNode, useState } from 'react';
 import { Marketplace } from './types';
 import { MarketplaceContext } from './context';
 
-export const MarketplaceProvider: FC = (props) => {
+export const MarketplaceProvider: FC<{ children: ReactNode }> = (props) => {
   const [searching, setSearching] = useState(false);
   const [marketplace, setMarketplace] = useState<Marketplace>();
 

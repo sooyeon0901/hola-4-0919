@@ -219,8 +219,8 @@ export default function New() {
 
       transaction.add(setStorefrontV2Instructions);
 
-      transaction.feePayer = wallet.publicKey;
-      transaction.recentBlockhash = (await connection.getLatestBlockhash()).blockhash;
+      (transaction.feePayer = wallet.publicKey),
+        (transaction.recentBlockhash = (await connection.getLatestBlockhash()).blockhash);
 
       const signedTransaction = await wallet.signTransaction(transaction);
 

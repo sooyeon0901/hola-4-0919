@@ -39,7 +39,7 @@ const defaultState: MultiTransactionState = {
 
 export const MultiTransactionContext = createContext<MultiTransactionState>(defaultState);
 
-export const MultiTransactionProvider: FC = ({ children }) => {
+export const MultiTransactionProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const [hasActionPending, setHasActionPending] = useState(false);
   const [actions, setActions] = useState<Action[]>([]);
   const [numActions, setNumActions] = useState(0);
