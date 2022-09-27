@@ -1,8 +1,8 @@
 import styled, { css } from 'styled-components';
 import { WalletDisconnectButton, WalletModalButton } from '@solana/wallet-adapter-react-ui';
 import { ButtonReset } from '@/assets/styles/ButtonReset';
-import 'react-loader-spinner';
-// import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css'; 에서 위로 변경 0923
+import 'react-loader-spinner';// 에서 아래로 변경 0927
+//import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css'; //에서 위로 변경 0923
 import { TailSpin } from 'react-loader-spinner';
 
 interface ButtonProps {

@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import React, { FC, VFC } from 'react';
+import React, { FC, ReactNode, VFC } from 'react';
 import SocialLinks from '@/components/SocialLinks';
 import ReactDom from 'react-dom';
 import CookieSettings from '../../components/CookieSettings';
@@ -138,6 +138,7 @@ const Footer: VFC = () => {
 
 interface LinkProps {
   href: string;
+  children: ReactNode;
 }
 
 const InternalLink: FC<LinkProps> = ({ href, children }) => (
@@ -154,7 +155,7 @@ const ExternalLink: FC<LinkProps> = ({ href, children }) => (
   </a>
 );
 
-const TaggedNew: FC = ({ children }) => (
+const TaggedNew: FC<{ children: ReactNode }> = ({ children }) => (
   <div className="flex justify-center md:justify-start">
     <div className="relative">
       {children}

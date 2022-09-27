@@ -11,7 +11,7 @@ import { useForm } from 'react-hook-form';
 import Button from '@/components/Button';
 import { toast } from 'react-toastify';
 import { initMarketplaceSDK, Nft, AhListing, Marketplace } from '@holaplex/marketplace-js-sdk';
-import { Wallet } from '@metaplex/js';
+import { Wallet } from 'ksy-metaplex-js-one';
 import { Action, MultiTransactionContext } from '@/views/_global/MultiTransaction';
 import { useAnalytics } from 'src/views/_global/AnalyticsProvider';
 import { toLamports, toSOL } from '@/modules/sol';

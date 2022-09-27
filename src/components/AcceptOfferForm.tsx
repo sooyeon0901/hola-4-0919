@@ -14,7 +14,7 @@ import {
   initMarketplaceSDK,
   Marketplace,
 } from '@holaplex/marketplace-js-sdk';
-import { Wallet } from '@metaplex/js';
+import { Wallet } from 'ksy-metaplex-js-one';
 import { Action, MultiTransactionContext } from '@/views/_global/MultiTransaction';
 import { useAnalytics } from 'src/views/_global/AnalyticsProvider';
 

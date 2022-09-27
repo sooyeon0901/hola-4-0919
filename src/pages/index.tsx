@@ -33,6 +33,7 @@ import clsx from 'clsx';
 import Link from 'next/link';
 import { FC, ReactNode, useMemo } from 'react';
 import Carousel from 'react-grid-carousel';
+import React from 'react';
 
 export interface HomeData {
   feedEvents: HeroSectionData;
@@ -116,6 +117,7 @@ export default function Home(): JSX.Element {
 
 interface HomeLinkProps {
   href: string;
+  children: ReactNode;
 }
 
 const InternalLink: FC<HomeLinkProps> = ({ href, children }) => (
@@ -149,10 +151,10 @@ const PageRightButton = (
   </button>
 );
 
-type Header = FC;
-type Title = FC;
+type Header = FC<{ children: ReactNode }>;
+type Title = FC<{ children: ReactNode }>;
 type HeaderAction<T> = FC<T>;
-type Body = FC;
+type Body = FC<{ children: ReactNode }>;
 
 type HomeSectionSubtypes = {
   Header: Header;
@@ -177,7 +179,7 @@ type HomeSectionSubtypes = {
  *  </HomeSection>
  * ```
  */
-export const HomeSection: FC & HomeSectionSubtypes = ({ children }) => (
+export const HomeSection: FC<{ children: ReactNode }> & HomeSectionSubtypes = ({ children }) => (
   <div className="my-20 lg:my-40">{children}</div>
 );
 
@@ -196,6 +198,7 @@ HomeSection.Title = HomeSectionTitle;
 interface HeaderActionProps {
   href: string;
   external?: boolean;
+  children: ReactNode;
 }
 
 const HomeSectionHeaderAction: HeaderAction<HeaderActionProps> = ({ href, external, children }) => {
@@ -225,6 +228,7 @@ interface HomeSectionCarouselProps {
   rows: number;
   cols: number;
   gap?: number;
+  children: ReactNode;
 }
 
 export const HomeSectionCarousel: FC<HomeSectionCarouselProps> & HomeSectionCarouselSubtypes = ({

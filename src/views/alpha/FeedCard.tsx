@@ -97,19 +97,20 @@ export function FeedCard(props: {
           )}
 
           {attrs.nft?.category === `video` || attrs.nft?.category === `audio` ? (
-            <video
-              onLoadStart={() => setImgLoaded(true)}
-              onLoad={() => setImgLoaded(true)}
-              className={`block aspect-square w-full rounded-lg border-none object-cover shadow`}
-              playsInline={true}
-              autoPlay={true}
-              muted={true}
-              controls={true}
-              controlsList={`nodownload`}
-              loop={true}
-              poster={imgOpt(attrs.nft?.image, 600)!}
-              src={attrs.nft.files[0].uri}
-            />
+            <></>
+            // <video
+            //   onLoadStart={() => setImgLoaded(true)}
+            //   onLoad={() => setImgLoaded(true)}
+            //   className={`block aspect-square w-full rounded-lg border-none object-cover shadow`}
+            //   playsInline={true}
+            //   autoPlay={true}
+            //   muted={true}
+            //   controls={true}
+            //   controlsList={`nodownload`}
+            //   loop={true}
+            //   poster={imgOpt(attrs.nft?.image, 600)!}
+            //   src={attrs.nft.files[0].uri}
+            // />
           ) : (
             attrs.nft?.image && (
               <img

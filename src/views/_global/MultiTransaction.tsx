@@ -1,4 +1,4 @@
-import React, { FC, createContext, useState, useContext } from 'react';
+import React, { FC, createContext, useState, useContext, ReactNode } from 'react';
 import { errorCodeHelper } from '@/modules/utils/marketplace';
 import Button from '@/components/Button';
 import Modal from '@/components/Modal';

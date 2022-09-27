@@ -35,19 +35,20 @@ const NFTFile: FC<NFTFileProps> = ({ nft, loading }) => {
             />
           </div>
         ) : nft?.category === `video` || nft?.category === `audio` ? (
-          <video
-            onLoadStart={() => setImgLoaded(true)}
-            onLoad={() => setImgLoaded(true)}
-            className={`block w-full rounded-lg border-none object-cover shadow`}
-            playsInline={true}
-            autoPlay={true}
-            muted={true}
-            controls={true}
-            controlsList={`nodownload`}
-            loop={true}
-            poster={imgOpt(nft?.image, 800)!}
-            src={nft.files.find((file) => file.fileType === 'video/mp4')?.uri || nft.files[0].uri}
-          />
+          <></>
+          // <video
+          //   onLoadStart={() => setImgLoaded(true)}
+          //   onLoad={() => setImgLoaded(true)}
+          //   className={`block w-full rounded-lg border-none object-cover shadow`}
+          //   playsInline={true}
+          //   autoPlay={true}
+          //   muted={true}
+          //   controls={true}
+          //   controlsList={`nodownload`}
+          //   loop={true}
+          //   poster={imgOpt(nft?.image, 800)!}
+          //   src={nft.files.find((file) => file.fileType === 'video/mp4')?.uri || nft.files[0].uri}
+          // />
         ) : (
           nft?.image && (
             <NFTImage
