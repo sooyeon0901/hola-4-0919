@@ -40,7 +40,7 @@ const CancelOfferForm: FC<CancelOfferFormProps> = ({
 
   const { runActions, hasActionPending } = useContext(MultiTransactionContext);
 
-  const sdk = useMemo(() => initMarketplaceSDK(connection, wallet as Wallet), [connection, wallet]);
+  const sdk = useMemo(() => initMarketplaceSDK(connection, wallet as unknown as Wallet), [connection, wallet]);
   const { trackNFTEvent } = useAnalytics();
   const onCancelOffer = async () => {
     if (offer && offer.auctionHouse && nft) {

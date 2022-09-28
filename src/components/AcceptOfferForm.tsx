@@ -64,7 +64,7 @@ const AcceptOfferForm: FC<AcceptOfferFormProps> = ({
 
   const { runActions, hasActionPending } = useContext(MultiTransactionContext);
 
-  const sdk = useMemo(() => initMarketplaceSDK(connection, wallet as Wallet), [connection, wallet]);
+  const sdk = useMemo(() => initMarketplaceSDK(connection, wallet as unknown as Wallet), [connection, wallet]);
   const { trackNFTEvent } = useAnalytics();
 
   const onAcceptOffer = async () => {

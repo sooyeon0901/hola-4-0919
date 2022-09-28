@@ -54,7 +54,7 @@ const UpdateOfferForm: FC<UpdateOfferFormProps> = ({
 
   const offer = nft?.offers?.find((offer) => offer.buyer === publicKey?.toBase58());
 
-  const sdk = useMemo(() => initMarketplaceSDK(connection, wallet as Wallet), [connection, wallet]);
+  const sdk = useMemo(() => initMarketplaceSDK(connection, wallet as unknown as Wallet), [connection, wallet]);
   const { runActions, actions, hasActionPending, hasRemainingActions, retryActions } =
     useContext(MultiTransactionContext);
   const { trackNFTEvent } = useAnalytics();

@@ -62,7 +62,7 @@ const OfferForm: FC<OfferFormProps> = ({ nft, marketplace, refetch, reroute = tr
 
   const router = useRouter();
 
-  const sdk = useMemo(() => initMarketplaceSDK(connection, wallet as Wallet), [connection, wallet]);
+  const sdk = useMemo(() => initMarketplaceSDK(connection, wallet as unknown as Wallet), [connection, wallet]);
   const { track, trackNFTEvent } = useAnalytics();
   const { runActions, hasActionPending } = useContext(MultiTransactionContext);
 
