@@ -5,13 +5,13 @@ import { useAnalytics } from 'src/views/_global/AnalyticsProvider';
 import dynamic from 'next/dynamic';
 import { holaSignMetadata } from '@/modules/storefront/approve-nft';
 import { useScrollBlock } from '@/hooks/useScrollBlock';
-import { BulkMinter as TBulkMinter } from 'ksy-holaplex-ui-one';
+import { BulkMinter as TBulkMinter } from 'cherry-holaplex-ui';
 import { Connection } from '@solana/web3.js';
 import { StorefrontContext } from '@/modules/storefront';
 import { useRouter } from 'next/router';
 import { useWallet } from '@solana/wallet-adapter-react';
 
-const BulkMinter = dynamic(() => import('ksy-holaplex-ui-one').then((mod) => mod.BulkMinter), {
+const BulkMinter = dynamic(() => import('cherry-holaplex-ui').then((mod) => mod.BulkMinter), {
   ssr: false,
 }) as typeof TBulkMinter;
 
@@ -79,6 +79,7 @@ const MintModal = ({ show, onClose }: MintModalProps) => {
       <BulkMinter
         goToOwnedRoute={() => router.push(`/profiles/${wallet?.publicKey?.toBase58()}/created`)}
         wallet={wallet}
+        wallets={wallet.wallets} // ksy 0929
         track={track}
         storefront={storefront}
         holaSignMetadata={holaSignMetadata}

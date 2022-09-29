@@ -10,7 +10,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import * as zod from 'zod';
 import Button from '@/components/Button';
 import { initMarketplaceSDK } from '@holaplex/marketplace-js-sdk';
-import { Wallet } from 'ksy-metaplex-js-one';
+import { Wallet } from 'cherry-metaplex-js';
 import { Action, MultiTransactionContext } from '@/views/_global/MultiTransaction';
 import { useAnalytics } from 'src/views/_global/AnalyticsProvider';
 import { toLamports } from '@/modules/sol';

@@ -1,4 +1,4 @@
-import { programs, Wallet } from '@metaplex/js';
+import { programs, Wallet } from 'cherry-metaplex-js';
 import DomainFormItem from 'src/components/DomainFormItem';
 import Button from '@/components/Button';
 import { RuleObject } from 'rc-field-form/lib/interface';
@@ -169,7 +169,7 @@ export default function New() {
       }
       const auctionHouseCreateInstruction = await createAuctionHouse({
         connection,
-        wallet: wallet as Wallet,
+        wallet: wallet as unknown as Wallet,
         sellerFeeBasisPoints,
       });
 

@@ -6,7 +6,7 @@ import { useConnection, useWallet } from '@solana/wallet-adapter-react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import { initMarketplaceSDK, Nft, Marketplace, Offer } from '@holaplex/marketplace-js-sdk';
-import { Wallet } from 'ksy-metaplex-js-one';
+import { Wallet } from 'cherry-metaplex-js';
 import { Action, MultiTransactionContext } from '@/views/_global/MultiTransaction';
 import { LAMPORTS_PER_SOL } from '@solana/web3.js';
 import { useAnalytics } from 'src/views/_global/AnalyticsProvider';

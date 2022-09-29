@@ -7,7 +7,7 @@ import {
   TransactionInstruction,
 } from '@solana/web3.js';
 import { NATIVE_MINT } from '@solana/spl-token';
-import { Wallet } from '@metaplex/js';
+import { Wallet } from 'cherry-metaplex-js';
 import { AuctionHouseProgram } from '@holaplex/mpl-auction-house';
 
 const { createCreateAuctionHouseInstruction } = AuctionHouseProgram.instructions;

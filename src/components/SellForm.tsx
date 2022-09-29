@@ -11,7 +11,7 @@ import Button from './Button';
 import { useConnection, useWallet } from '@solana/wallet-adapter-react';
 import { toast } from 'react-toastify';
 import { Marketplace, initMarketplaceSDK, Nft } from '@holaplex/marketplace-js-sdk';
-import { Wallet } from '@metaplex/js';
+import { Wallet } from 'cherry-metaplex-js';
 import { Action, MultiTransactionContext } from '@/views/_global/MultiTransaction';
 import { useAnalytics } from 'src/views/_global/AnalyticsProvider';
 import { TOS_LINK } from '@/modules/crossmint/constants';
@@ -73,7 +73,7 @@ const SellForm: FC<SellFormProps> = ({ nft, marketplace, refetch, loading, setOp
   const wallet = useWallet();
   const { connection } = useConnection();
 
-  const sdk = useMemo(() => initMarketplaceSDK(connection, wallet as Wallet), [connection, wallet]);
+  const sdk = useMemo(() => initMarketplaceSDK(connection, wallet as unknown as Wallet), [connection, wallet]); //ksy
   const { trackNFTEvent } = useAnalytics();
 
   const {

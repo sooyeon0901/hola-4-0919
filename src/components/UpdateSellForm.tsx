@@ -19,7 +19,7 @@ import {
   Offer,
   Marketplace,
 } from '@holaplex/marketplace-js-sdk';
-import { Wallet } from '@metaplex/js';
+import { Wallet } from 'cherry-metaplex-js';
 import { Action, MultiTransactionContext } from '@/views/_global/MultiTransaction';
 import Modal from '@/components/Modal';
 import { toLamports } from '@/modules/sol';
@@ -76,7 +76,7 @@ const UpdateSellForm: FC<UpdateSellFormProps> = ({
   const currPrice = String(Number(listing?.price) / LAMPORTS_PER_SOL);
   const [showShare, setShowShare] = useState(false);
   const [updatedPrice, setUpdatePrice] = useState(Number(currPrice));
-  const sdk = useMemo(() => initMarketplaceSDK(connection, wallet as Wallet), [connection, wallet]);
+  const sdk = useMemo(() => initMarketplaceSDK(connection, wallet as unknown as Wallet), [connection, wallet]); //ksy
   const { runActions, hasActionPending, clearActions } = useContext(MultiTransactionContext);
 
   const listPrice = Number(watch('amount')) * LAMPORTS_PER_SOL;

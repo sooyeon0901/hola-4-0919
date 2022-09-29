@@ -6,7 +6,7 @@ import Button from './Button';
 import { useConnection, useWallet } from '@solana/wallet-adapter-react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
-import { Wallet } from '@metaplex/js';
+import { Wallet } from 'cherry-metaplex-js';
 import { Action, MultiTransactionContext } from '@/views/_global/MultiTransaction';
 
 interface CancelSellFormProps {
@@ -40,7 +40,7 @@ const CancelSellForm: FC<CancelSellFormProps> = ({
 
   const isOwner = Boolean(nft?.owner?.address === publicKey?.toBase58());
 
-  const sdk = useMemo(() => initMarketplaceSDK(connection, wallet as Wallet), [connection, wallet]);
+  const sdk = useMemo(() => initMarketplaceSDK(connection, wallet as unknown as Wallet), [connection, wallet]); //ksy
 
   const { runActions, hasActionPending } = useContext(MultiTransactionContext);
 

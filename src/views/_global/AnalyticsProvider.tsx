@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Coingecko, Currency } from '@metaplex/js';
+import { Coingecko, Currency } from 'cherry-metaplex-js';
 import Bugsnag from '@bugsnag/js';
 import BugsnagPluginReact from '@bugsnag/plugin-react';
 
